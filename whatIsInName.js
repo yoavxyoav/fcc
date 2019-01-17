@@ -22,12 +22,6 @@ function whatIsInAName(collection, source) {
       arr.push(obj) // then the result array is pushed with the object
     }
   }
-
-
-  // Only change code below this line
-  
-  
-  // Only change code above this line
   return arr;
 }
 
