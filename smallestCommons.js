@@ -1,22 +1,28 @@
 function smallestCommons(arr) {
 
   function multiArray(arr) {
-    return arr.reduce ( (product, currentValue) => product * currentValue)
+    return arr.reduce((product, currentValue) => product * currentValue)
   }
 
   let multipliersArr = []
 
   for (let i = Math.max(...arr); i >= Math.min(...arr); i--) {
     multipliersArr.push(i);
+  }
+  console.log(multipliersArr)
 
   for (let i in multipliersArr) {
-    let product = multiArray([].concat(multipliersArr).splice(i,1))
+    let tempArr = [].concat(multipliersArr)
+    tempArr.splice(i,1)
+    console.log(tempArr)
+    let product = multiArray(tempArr)
+    console.log(product, multipliersArr[i])
     if (product % multipliersArr[i] == 0) {
       multipliersArr[i] = 1;
     }
   }
     
-}
+
 
   let result = multiArray(multipliersArr)
 
@@ -25,5 +31,5 @@ function smallestCommons(arr) {
 }
 
 
-smallestCommons([1,6]);
+smallestCommons([1,7]);
 
