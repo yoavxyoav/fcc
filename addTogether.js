@@ -1,16 +1,12 @@
+//Create a function that sums two arguments together. If only one argument is provided, then return a function that expects one argument and returns the sum.
 function addTogether() {
   console.log(arguments.length)
   for (let n of arguments) {
-    console.log(n, typeof(n))
     if (typeof(n) != "number") {
       return undefined
     }
   }
-
-  console.log(arguments)
   if (arguments.length === 2) {
-    console.log("!")
-    console.log (arguments[0], arguments[1])
     return arguments[0] + arguments[1]
   } else {
     let firstArg = arguments[0]
@@ -21,9 +17,6 @@ function addTogether() {
       return otherNum + firstArg
     }
   }
-
-  cosnole.log("got here")
-  return false;
 }
 
 addTogether(2,3);
